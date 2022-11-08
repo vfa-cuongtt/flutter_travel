@@ -5,8 +5,8 @@ import 'package:travel_app/core/constants/dimension_contants.dart';
 import 'package:travel_app/core/helpers/asset_helper.dart';
 import 'package:travel_app/core/helpers/image_helper.dart';
 
-class AppBarContainer extends StatelessWidget {
-  const AppBarContainer({
+class AppBarContainerWidgets extends StatelessWidget {
+  const AppBarContainerWidgets({
     Key? key,
     required this.child,
     this.title,
