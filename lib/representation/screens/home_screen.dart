@@ -2,11 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:travel_app/core/constants/dimension_contants.dart';
 import 'package:travel_app/core/helpers/image_helper.dart';
-import 'package:travel_app/representation/screens/hotel_screen.dart';
 import 'package:travel_app/representation/widgets/item_category_widget.dart';
-
 import '../../core/helpers/asset_helper.dart';
 import '../widgets/app_bar_container.dart';
+import 'hotel_booking_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -104,7 +103,8 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                     color: const Color(0xFFFE9C5E),
                     onTap: () {
-                      Navigator.of(context).pushNamed(HotelScreen.routeName);
+                      Navigator.of(context)
+                          .pushNamed(HotelBookingScreen.routeName);
                     },
                   ),
                 ),
