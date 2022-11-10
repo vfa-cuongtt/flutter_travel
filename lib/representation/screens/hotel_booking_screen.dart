@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:travel_app/core/extensions/date_ext.dart';
+import 'package:travel_app/representation/screens/select_date_screen.dart';
 import '../../core/constants/dimension_contants.dart';
 import '../../core/helpers/asset_helper.dart';
 import '../widgets/app_bar_container.dart';
@@ -15,9 +17,11 @@ class HotelBookingScreen extends StatefulWidget {
 }
 
 class _HotelBookingScreenState extends State<HotelBookingScreen> {
+  String? dateSelected;
   @override
   Widget build(BuildContext context) {
     return AppBarContainerWidgets(
+      implementLeading: true,
       titleString: 'Hotel Booking',
       // Create list view
       child: SingleChildScrollView(
@@ -35,12 +39,27 @@ class _HotelBookingScreenState extends State<HotelBookingScreen> {
             SizedBox(
               height: kMediumPadding,
             ),
-            ItemBookingWidget(
-              icon: AssetHelper.iconCalendar,
-              title: 'Select Date',
-              description: '13 Feb - 18 Feb 2021',
-              onTap: () {},
-            ),
+
+            // * StatefulBuilder: only render ItemBookingWidget if dateSelected have data  */
+            StatefulBuilder(builder: (context, setState) {
+              return ItemBookingWidget(
+                icon: AssetHelper.iconCalendar,
+                title: 'Select Date',
+                description: dateSelected ?? '13 Feb - 18 Feb 2021',
+                onTap: () async {
+                  final result = await Navigator.of(context)
+                      .pushNamed(SelectDateScreen.routeName);
+
+                  // * Check result data has no null value */
+                  if (!(result as List<DateTime?>)
+                      .any((element) => element == null)) {
+                    dateSelected =
+                        '${result[0]?.getStartDate} - ${result[1]?.getEndDate}';
+                    setState(() {});
+                  }
+                },
+              );
+            }),
             SizedBox(
               height: kMediumPadding,
             ),

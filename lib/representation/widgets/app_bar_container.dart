@@ -38,17 +38,22 @@ class AppBarContainerWidgets extends StatelessWidget {
                     children: [
                       // <-- Condition display icon Back -->
                       if (implementLeading)
-                        Container(
-                          decoration: const BoxDecoration(
-                              borderRadius: BorderRadius.all(
-                                Radius.circular(kDefaultPadding),
-                              ),
-                              color: Colors.white),
-                          padding: const EdgeInsets.all(kItemPadding),
-                          child: const Icon(
-                            FontAwesomeIcons.arrowLeft,
-                            color: Colors.black,
-                            size: kDefaultIconSize,
+                        GestureDetector(
+                          onTap: () {
+                            Navigator.of(context).pop();
+                          },
+                          child: Container(
+                            decoration: const BoxDecoration(
+                                borderRadius: BorderRadius.all(
+                                  Radius.circular(kDefaultPadding),
+                                ),
+                                color: Colors.white),
+                            padding: const EdgeInsets.all(kItemPadding),
+                            child: const Icon(
+                              FontAwesomeIcons.arrowLeft,
+                              color: Colors.black,
+                              size: kDefaultIconSize,
+                            ),
                           ),
                         ),
 
