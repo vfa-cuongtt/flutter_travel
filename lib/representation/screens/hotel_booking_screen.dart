@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:travel_app/core/extensions/date_ext.dart';
 import 'package:travel_app/representation/screens/guest_and_room_booking_screen.dart';
+import 'package:travel_app/representation/screens/hotels_screen.dart';
 import 'package:travel_app/representation/screens/select_date_screen.dart';
 import '../../core/constants/dimension_contants.dart';
 import '../../core/helpers/asset_helper.dart';
@@ -78,7 +79,9 @@ class _HotelBookingScreenState extends State<HotelBookingScreen> {
             ),
             ButtonWidget(
               title: 'Search',
-              onTap: () {},
+              onTap: () {
+                Navigator.of(context).pushNamed(HotelsScreen.routeName);
+              },
             )
           ],
         ),

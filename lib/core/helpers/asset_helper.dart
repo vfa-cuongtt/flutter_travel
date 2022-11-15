@@ -19,4 +19,13 @@ class AssetHelper {
   static const String iconDecreaseDisable =
       'assets/icons/icon_decrease_disable.png';
   static const String iconIncrease = 'assets/icons/icon_increase.png';
+  static const String iconHeartActive = 'assets/icons/icon_heart_active.png';
+  static const String iconHeartInactive =
+      'assets/icons/icon_heart_inactive.png';
+  static const String iconPinLocation = 'assets/icons/icon_pin_location.png';
+  static const String iconStar = 'assets/icons/icon_star.png';
+
+  static const String imgHotel1 = 'assets/images/hotel1.png';
+  static const String imgHotel2 = 'assets/images/hotel2.png';
+  static const String imgHotel3 = 'assets/images/hotel3.png';
 }
