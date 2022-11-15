@@ -3,6 +3,7 @@ import 'package:travel_app/core/constants/color_constants.dart';
 import 'package:travel_app/core/constants/dimension_contants.dart';
 import 'package:travel_app/core/helpers/image_helper.dart';
 import 'package:travel_app/data/models/hotel_model.dart';
+import 'package:travel_app/representation/screens/hotel_detail_screen.dart';
 import 'package:travel_app/representation/widgets/button_widget.dart';
 
 import '../../core/helpers/asset_helper.dart';
@@ -104,7 +105,10 @@ class ItemHotelWidget extends StatelessWidget {
                     Expanded(
                       child: ButtonWidget(
                         title: 'Book a room',
-                        onTap: () {},
+                        onTap: () {
+                          Navigator.of(context)
+                              .pushNamed(HotelDetailScreen.routeName);
+                        },
                       ),
                     )
                   ],

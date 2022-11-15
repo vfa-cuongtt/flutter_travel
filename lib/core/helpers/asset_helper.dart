@@ -1,12 +1,5 @@
 class AssetHelper {
-  static const String backgroundSplash = 'assets/images/background_splash.png';
-  static const String circleSplash = 'assets/images/circle_splash.png';
-  static const String imgIntro1 = 'assets/images/intro1.png';
-  static const String imgIntro2 = 'assets/images/intro2.png';
-  static const String imgIntro3 = 'assets/images/intro3.png';
-  static const String imgOval1 = 'assets/images/oval_1.png';
-  static const String imgOval2 = 'assets/images/oval_2.png';
-  static const String avatar = 'assets/images/avatar.png';
+  // * Define icon
   static const String iconHotel = 'assets/icons/icon_hotel.png';
   static const String iconPlane = 'assets/icons/icon_plane.png';
   static const String iconHotelPlane = 'assets/icons/icon_hotel_plane.png';
@@ -24,8 +17,24 @@ class AssetHelper {
       'assets/icons/icon_heart_inactive.png';
   static const String iconPinLocation = 'assets/icons/icon_pin_location.png';
   static const String iconStar = 'assets/icons/icon_star.png';
+  static const String iconCurrencyExchange =
+      'assets/icons/icon_currency_exchange.png';
+  static const String iconFontDesk = 'assets/icons/icon_front_desk.png';
+  static const String iconMore = 'assets/icons/icon_more.png';
+  static const String iconRestaurant = 'assets/icons/icon_restaurant.png';
+  static const String iconWifi = 'assets/icons/icon_wifi.png';
 
+  // * Define Image
+  static const String backgroundSplash = 'assets/images/background_splash.png';
+  static const String circleSplash = 'assets/images/circle_splash.png';
+  static const String imgIntro1 = 'assets/images/intro1.png';
+  static const String imgIntro2 = 'assets/images/intro2.png';
+  static const String imgIntro3 = 'assets/images/intro3.png';
+  static const String imgOval1 = 'assets/images/oval_1.png';
+  static const String imgOval2 = 'assets/images/oval_2.png';
+  static const String avatar = 'assets/images/avatar.png';
   static const String imgHotel1 = 'assets/images/hotel1.png';
   static const String imgHotel2 = 'assets/images/hotel2.png';
   static const String imgHotel3 = 'assets/images/hotel3.png';
+  static const String imgDetailHotel1 = 'assets/images/detail_hotel1.png';
 }
