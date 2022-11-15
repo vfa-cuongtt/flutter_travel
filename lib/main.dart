@@ -19,13 +19,15 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        title: ' Travo App',
-        debugShowCheckedModeBanner: false,
-        theme: ThemeData(
-            primaryColor: ColorPalette.primaryColor,
-            scaffoldBackgroundColor: ColorPalette.backgroundScaffoldColor,
-            backgroundColor: ColorPalette.backgroundScaffoldColor),
-        routes: routes,
-        home: const SplashScreen());
+      title: ' Travo App',
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+          primaryColor: ColorPalette.primaryColor,
+          scaffoldBackgroundColor: ColorPalette.backgroundScaffoldColor,
+          backgroundColor: ColorPalette.backgroundScaffoldColor),
+      routes: routes,
+      onGenerateRoute: generateRoute, // * Define generate route
+      home: const SplashScreen(),
+    );
   }
 }
