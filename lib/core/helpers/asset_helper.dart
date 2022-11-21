@@ -23,6 +23,14 @@ class AssetHelper {
   static const String iconMore = 'assets/icons/icon_more.png';
   static const String iconRestaurant = 'assets/icons/icon_restaurant.png';
   static const String iconWifi = 'assets/icons/icon_wifi.png';
+  static const String iconFreeWifi = 'assets/icons/icon_free_wifi.png';
+  static const String iconContact = 'assets/icons/icon_contact.png';
+  static const String iconFreeBreakfast =
+      'assets/icons/icon_free_breakfast.png';
+  static const String iconNonRefundable =
+      'assets/icons/icon_non_refundable.png';
+  static const String iconNonSmoking = 'assets/icons/icon_non_smoking.png';
+  static const String iconPromoCode = 'assets/icons/icon_promo_code.png';
 
   // * Define Image
   static const String backgroundSplash = 'assets/images/background_splash.png';
@@ -38,4 +46,7 @@ class AssetHelper {
   static const String imgHotel3 = 'assets/images/hotel3.png';
   static const String imgDetailHotel1 = 'assets/images/detail_hotel1.png';
   static const String imgMapHotel = 'assets/images/map_hotel.png';
+  static const String imgRoom1 = 'assets/images/img_room1.png';
+  static const String imgRoom2 = 'assets/images/img_room2.png';
+  static const String imgRoom3 = 'assets/images/img_room3.png';
 }

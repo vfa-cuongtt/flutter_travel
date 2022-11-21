@@ -7,6 +7,7 @@ import 'package:travel_app/representation/screens/hotels_screen.dart';
 import 'package:travel_app/representation/screens/intro_screen.dart';
 import 'package:travel_app/representation/screens/main_app.dart';
 import 'package:travel_app/representation/screens/select_date_screen.dart';
+import 'package:travel_app/representation/screens/select_room_screen.dart';
 import 'package:travel_app/representation/screens/splash_screen.dart';
 
 final Map<String, WidgetBuilder> routes = {
@@ -18,6 +19,7 @@ final Map<String, WidgetBuilder> routes = {
   SelectDateScreen.routeName: (context) => SelectDateScreen(),
   GuestAndRoomBookingWidget.routeName: (context) =>
       const GuestAndRoomBookingWidget(),
+  SelectRoomScreen.routeName: (context) => const SelectRoomScreen(),
 };
 
 // * Define generate route and add a model for the routes

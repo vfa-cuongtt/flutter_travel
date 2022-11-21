@@ -3,6 +3,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:travel_app/core/constants/color_constants.dart';
 import 'package:travel_app/core/constants/dimension_contants.dart';
 import 'package:travel_app/data/models/hotel_model.dart';
+import 'package:travel_app/representation/screens/select_room_screen.dart';
 import '../../core/helpers/asset_helper.dart';
 import '../../core/helpers/image_helper.dart';
 import '../widgets/button_widget.dart';
@@ -204,7 +205,10 @@ Grand Luxury’s is set in a building built in the
                           const SizedBox(height: kDefaultPadding),
                           ButtonWidget(
                             title: 'Select room',
-                            onTap: () {},
+                            onTap: () {
+                              Navigator.of(context)
+                                  .pushNamed(SelectRoomScreen.routeName);
+                            },
                           )
                         ],
                       ),
