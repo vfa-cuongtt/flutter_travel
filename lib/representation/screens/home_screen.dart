@@ -3,6 +3,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:travel_app/core/constants/dimension_contants.dart';
 import 'package:travel_app/core/helpers/image_helper.dart';
 import 'package:travel_app/representation/widgets/item_category_widget.dart';
+import '../../core/constants/textstyle_constants.dart';
 import '../../core/helpers/asset_helper.dart';
 import '../widgets/app_bar_container.dart';
 import 'hotel_booking_screen.dart';
@@ -15,6 +16,94 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  final List<Map<String, String>> listImageLeft = [
+    {
+      'name': 'Korea',
+      'image': AssetHelper.imgKorea,
+    },
+    {
+      'name': 'Dubai',
+      'image': AssetHelper.imgDubai,
+    }
+  ];
+
+  final List<Map<String, String>> listImageRight = [
+    {
+      'name': 'Turkey',
+      'image': AssetHelper.imgTurkey,
+    },
+    {
+      'name': 'Japan',
+      'image': AssetHelper.imgJapan,
+    }
+  ];
+
+  Widget _buildImageHomeScreen(String name, String image) {
+    return GestureDetector(
+      onTap: () {
+        Navigator.of(context)
+            .pushNamed(HotelBookingScreen.routeName, arguments: name);
+      },
+      child: Container(
+        margin: const EdgeInsets.only(bottom: kDefaultPadding),
+        child: Stack(
+          alignment: Alignment.topRight,
+          children: [
+            ImageHelper.loadFromAsset(
+              image,
+              width: double.infinity,
+              fit: BoxFit.fitWidth,
+              radius: BorderRadius.circular(kItemPadding),
+            ),
+            const Padding(
+              padding: EdgeInsets.all(kDefaultPadding),
+              child: Icon(
+                Icons.favorite,
+                color: Colors.red,
+              ),
+            ),
+            Positioned(
+              left: kDefaultPadding,
+              bottom: kDefaultPadding,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    name,
+                    style: TextStyles.defaultStyle.bold.whiteTextColor,
+                  ),
+                  SizedBox(
+                    height: kItemPadding,
+                  ),
+                  Container(
+                    padding: const EdgeInsets.all(kMinPadding),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(kMinPadding),
+                      color: Colors.white.withOpacity(0.4),
+                    ),
+                    child: Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Icon(
+                          Icons.star,
+                          color: Color(0xffFFC107),
+                        ),
+                        SizedBox(
+                          width: kItemPadding,
+                        ),
+                        Text('4.5')
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+            )
+          ],
+        ),
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return AppBarContainerWidgets(
@@ -66,7 +155,7 @@ class _HomeScreenState extends State<HomeScreen> {
         child: Column(
           children: [
             // Search text field
-            TextField(
+            const TextField(
               decoration: InputDecoration(
                 hintText: 'Search your destination',
                 prefixIcon: Padding(
@@ -88,7 +177,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 contentPadding: EdgeInsets.symmetric(horizontal: kItemPadding),
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: kDefaultPadding,
             ),
             Row(
@@ -108,7 +197,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     },
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   width: kDefaultPadding,
                 ),
                 Expanded(
@@ -123,7 +212,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     onTap: () {},
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   width: kDefaultPadding,
                 ),
                 Expanded(
@@ -141,6 +230,49 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                 ),
               ],
+            ),
+            SizedBox(
+              height: kMediumPadding,
+            ),
+            Row(
+              children: [
+                const Text(
+                  'Popular Destinations',
+                  style: TextStyle(fontWeight: FontWeight.bold),
+                ),
+                Spacer(),
+                Text(
+                  'See All',
+                  style: TextStyles.defaultStyle.bold.primaryTextColor,
+                ),
+              ],
+            ),
+            const SizedBox(
+              height: kMediumPadding,
+            ),
+            Expanded(
+              child: SingleChildScrollView(
+                child: Row(
+                  children: [
+                    Expanded(
+                      child: Column(
+                        children: listImageLeft
+                            .map((e) =>
+                                _buildImageHomeScreen(e['name']!, e['image']!))
+                            .toList(),
+                      ),
+                    ),
+                    const SizedBox(width: kDefaultPadding),
+                    Expanded(
+                        child: Column(
+                      children: listImageRight
+                          .map((e) =>
+                              _buildImageHomeScreen(e['name']!, e['image']!))
+                          .toList(),
+                    )),
+                  ],
+                ),
+              ),
             )
           ],
         ));

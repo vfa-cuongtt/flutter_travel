@@ -49,4 +49,9 @@ class AssetHelper {
   static const String imgRoom1 = 'assets/images/img_room1.png';
   static const String imgRoom2 = 'assets/images/img_room2.png';
   static const String imgRoom3 = 'assets/images/img_room3.png';
+
+  static const String imgKorea = 'assets/images/img_korea.png';
+  static const String imgDubai = 'assets/images/img_dubai.png';
+  static const String imgTurkey = 'assets/images/img_turkey.png';
+  static const String imgJapan = 'assets/images/img_japan.png';
 }
