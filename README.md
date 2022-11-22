@@ -1,9 +1,8 @@
 # travel_app
 
 A travel Flutter UI project.
+https://user-images.githubusercontent.com/19767876/203293918-5ee20428-ab8b-4918-8a92-ae35e37c4f6a.mov
 
-
-![](assets/final_screenshot/FinalUI.mov)
 
 ## Used library
 - cupertino_icons: ^1.0.2
