@@ -1,16 +1,14 @@
 # travel_app
 
-A new Flutter project.
+A travel Flutter UI project.
 
-## Getting Started
 
-This project is a starting point for a Flutter application.
+![](assets/final_screenshot/FinalUI.mov)
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Used library
+- cupertino_icons: ^1.0.2
+- smooth_page_indicator: ^1.0.0+2
+- hive_flutter: ^1.1.0
+- salomon_bottom_bar: ^3.3.1
+- font_awesome_flutter: ^10.2.1
+- syncfusion_flutter_datepicker: ^19.4.56
