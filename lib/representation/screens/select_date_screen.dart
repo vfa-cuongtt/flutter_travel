@@ -44,17 +44,23 @@ class SelectDateScreen extends StatelessWidget {
           ButtonWidget(
             title: 'Select',
             onTap: () {
-              Navigator.of(context).pop([rangeStartDate, rangeEndDate]);
+              if (rangeStartDate != null && rangeEndDate != null) {
+                Navigator.of(context).pop([rangeStartDate, rangeEndDate]);
+              } else {
+                Navigator.of(context).pop();
+              }
             },
           ),
           const SizedBox(
             height: kDefaultPadding,
           ),
           ButtonWidget(
-              title: 'Cancel',
-              onTap: () {
-                Navigator.of(context).pop([rangeStartDate, rangeEndDate]);
-              })
+            title: 'Cancel',
+            onTap: () {
+              Navigator.of(context).pop([rangeStartDate, rangeEndDate]);
+            },
+            opacity: ColorPalette.primaryColor.withOpacity(0.1),
+          )
         ],
       ),
     );

@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:travel_app/data/models/RoomModel.dart';
+import 'package:travel_app/data/models/room_model.dart';
 import 'package:travel_app/representation/widgets/app_bar_container.dart';
 import '../../core/helpers/asset_helper.dart';
 import '../widgets/item_room_boking_widget.dart';
+import 'checkout_screen.dart';
 
 class SelectRoomScreen extends StatelessWidget {
   const SelectRoomScreen({Key? key}) : super(key: key);
@@ -43,6 +44,10 @@ class SelectRoomScreen extends StatelessWidget {
             children: listRoom
                 .map((e) => ItemRoomBookingWidget(
                       roomModel: e,
+                      onTap: () {
+                        Navigator.of(context)
+                            .pushNamed(CheckoutScreen.routeName, arguments: e);
+                      },
                     ))
                 .toList()),
       ),

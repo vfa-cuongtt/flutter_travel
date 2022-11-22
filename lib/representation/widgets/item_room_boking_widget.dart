@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:travel_app/core/helpers/image_helper.dart';
-import 'package:travel_app/data/models/RoomModel.dart';
+import 'package:travel_app/data/models/room_model.dart';
 import 'package:travel_app/representation/widgets/item_utility_hotel_widget.dart';
 
 import '../../core/constants/dimension_contants.dart';
@@ -11,10 +11,13 @@ class ItemRoomBookingWidget extends StatelessWidget {
   const ItemRoomBookingWidget({
     Key? key,
     required this.roomModel,
+    required this.onTap,
+    this.numberOfRoom,
   }) : super(key: key);
 
   final RoomModel roomModel;
-
+  final Function()? onTap;
+  final int? numberOfRoom;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -63,30 +66,53 @@ class ItemRoomBookingWidget extends StatelessWidget {
           ),
           ItemUtilityHotelWidget(),
           DashLineWidget(),
-          Row(
-            children: [
-              Expanded(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
+          numberOfRoom == null
+              ? Row(
                   children: [
-                    Text(
-                      '\$${roomModel.roomPrice}',
-                      style: const TextStyle(
-                          fontWeight: FontWeight.bold, fontSize: 24),
+                    Expanded(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            '\$${roomModel.roomPrice}',
+                            style: const TextStyle(
+                                fontWeight: FontWeight.bold, fontSize: 24),
+                          ),
+                          const SizedBox(
+                            height: kMinPadding,
+                          ),
+                          const Text('/night'),
+                        ],
+                      ),
                     ),
-                    const SizedBox(
-                      height: kMinPadding,
-                    ),
-                    const Text('/night'),
+                    Expanded(
+                      child: ButtonWidget(
+                        title: 'Choose',
+                        onTap: onTap,
+                      ),
+                    )
                   ],
-                ),
-              ),
-              const Expanded(
-                  child: ButtonWidget(
-                title: 'Choose',
-              ))
-            ],
-          )
+                )
+              : Row(
+                  children: [
+                    Expanded(
+                      child: Row(
+                        children: [
+                          Text(
+                            '\$${roomModel.roomPrice}',
+                            style: const TextStyle(
+                                fontWeight: FontWeight.bold, fontSize: 24),
+                          ),
+                          const SizedBox(
+                            width: kMinPadding,
+                          ),
+                          const Text('/night'),
+                        ],
+                      ),
+                    ),
+                    Text('${numberOfRoom} room')
+                  ],
+                )
         ],
       ),
     );

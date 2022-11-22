@@ -10,8 +10,8 @@ import '../widgets/button_widget.dart';
 import '../widgets/item_booking_widget.dart';
 
 class HotelBookingScreen extends StatefulWidget {
-  const HotelBookingScreen({Key? key}) : super(key: key);
-
+  const HotelBookingScreen({Key? key, this.nameDestination}) : super(key: key);
+  final String? nameDestination;
   static const String routeName = '/hotel_booking_screen';
 
   @override
@@ -25,20 +25,21 @@ class _HotelBookingScreenState extends State<HotelBookingScreen> {
     return AppBarContainerWidgets(
       implementLeading: true,
       titleString: 'Hotel Booking',
-      // Create list view
+
+      // * Create list view
       child: SingleChildScrollView(
         child: Column(
           children: [
-            SizedBox(
+            const SizedBox(
               height: kMediumPadding * 2,
             ),
             ItemBookingWidget(
               icon: AssetHelper.iconLocation,
               title: 'Destination',
-              description: 'South Korea',
+              description: widget.nameDestination ?? 'Destination',
               onTap: () {},
             ),
-            SizedBox(
+            const SizedBox(
               height: kMediumPadding,
             ),
 
@@ -62,7 +63,7 @@ class _HotelBookingScreenState extends State<HotelBookingScreen> {
                 },
               );
             }),
-            SizedBox(
+            const SizedBox(
               height: kMediumPadding,
             ),
             ItemBookingWidget(
@@ -74,7 +75,7 @@ class _HotelBookingScreenState extends State<HotelBookingScreen> {
                     .pushNamed(GuestAndRoomBookingWidget.routeName);
               },
             ),
-            SizedBox(
+            const SizedBox(
               height: kMediumPadding,
             ),
             ButtonWidget(

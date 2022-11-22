@@ -8,6 +8,7 @@ import '../../core/helpers/asset_helper.dart';
 import '../../core/helpers/image_helper.dart';
 import '../widgets/button_widget.dart';
 import '../widgets/dashline_widget.dart';
+import '../widgets/item_utility_hotel_widget.dart';
 
 class HotelDetailScreen extends StatefulWidget {
   const HotelDetailScreen({Key? key, required this.hotelModel})
@@ -178,7 +179,10 @@ class _HotelDetailScreenState extends State<HotelDetailScreen> {
                               )
                             ],
                           ),
+
+                          // * Add dash line
                           const DashLineWidget(),
+
                           const Text(
                             'Information',
                             style: TextStyle(fontWeight: FontWeight.bold),
@@ -189,6 +193,10 @@ class _HotelDetailScreenState extends State<HotelDetailScreen> {
 services that the hotel offers for travellers and of
 course the hotel is very comfortable.''',
                           ),
+
+                          // * Add utility items
+                          ItemUtilityHotelWidget(),
+
                           const SizedBox(height: kDefaultPadding),
                           const Text(
                             'Location',

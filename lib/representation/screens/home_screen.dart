@@ -24,10 +24,42 @@ class _HomeScreenState extends State<HomeScreen> {
     {
       'name': 'Dubai',
       'image': AssetHelper.imgDubai,
+    },
+    {
+      'name': 'Korea',
+      'image': AssetHelper.imgKorea,
+    },
+    {
+      'name': 'Dubai',
+      'image': AssetHelper.imgDubai,
+    },
+    {
+      'name': 'Korea',
+      'image': AssetHelper.imgKorea,
+    },
+    {
+      'name': 'Dubai',
+      'image': AssetHelper.imgDubai,
     }
   ];
 
   final List<Map<String, String>> listImageRight = [
+    {
+      'name': 'Turkey',
+      'image': AssetHelper.imgTurkey,
+    },
+    {
+      'name': 'Japan',
+      'image': AssetHelper.imgJapan,
+    },
+    {
+      'name': 'Turkey',
+      'image': AssetHelper.imgTurkey,
+    },
+    {
+      'name': 'Japan',
+      'image': AssetHelper.imgJapan,
+    },
     {
       'name': 'Turkey',
       'image': AssetHelper.imgTurkey,
@@ -72,7 +104,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     name,
                     style: TextStyles.defaultStyle.bold.whiteTextColor,
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: kItemPadding,
                   ),
                   Container(
@@ -83,7 +115,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                     child: Row(
                       mainAxisSize: MainAxisSize.min,
-                      children: [
+                      children: const [
                         Icon(
                           Icons.star,
                           color: Color(0xffFFC107),
@@ -108,7 +140,7 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return AppBarContainerWidgets(
         title: Padding(
-          padding: EdgeInsets.symmetric(horizontal: kDefaultPadding),
+          padding: const EdgeInsets.symmetric(horizontal: kDefaultPadding),
           child: Row(
             children: [
               Column(
@@ -231,7 +263,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
               ],
             ),
-            SizedBox(
+            const SizedBox(
               height: kMediumPadding,
             ),
             Row(
@@ -240,7 +272,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   'Popular Destinations',
                   style: TextStyle(fontWeight: FontWeight.bold),
                 ),
-                Spacer(),
+                const Spacer(),
                 Text(
                   'See All',
                   style: TextStyles.defaultStyle.bold.primaryTextColor,

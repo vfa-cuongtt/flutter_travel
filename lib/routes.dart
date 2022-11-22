@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:travel_app/data/models/hotel_model.dart';
+import 'package:travel_app/representation/screens/checkout_screen.dart';
 import 'package:travel_app/representation/screens/guest_and_room_booking_screen.dart';
 import 'package:travel_app/representation/screens/hotel_booking_screen.dart';
 import 'package:travel_app/representation/screens/hotel_detail_screen.dart';
@@ -10,12 +11,14 @@ import 'package:travel_app/representation/screens/select_date_screen.dart';
 import 'package:travel_app/representation/screens/select_room_screen.dart';
 import 'package:travel_app/representation/screens/splash_screen.dart';
 
+import 'data/models/room_model.dart';
+
+// * Define generate route
 final Map<String, WidgetBuilder> routes = {
   SplashScreen.routeName: (context) => const SplashScreen(),
   IntroScreen.routeName: (context) => const IntroScreen(),
   MainApp.routeName: (context) => const MainApp(),
   HotelsScreen.routeName: (context) => const HotelsScreen(),
-  HotelBookingScreen.routeName: (context) => const HotelBookingScreen(),
   SelectDateScreen.routeName: (context) => SelectDateScreen(),
   GuestAndRoomBookingWidget.routeName: (context) =>
       const GuestAndRoomBookingWidget(),
@@ -36,6 +39,27 @@ MaterialPageRoute<dynamic>? generateRoute(RouteSettings settings) {
         },
       );
 
+    case CheckoutScreen.routeName:
+      // * Add Room model for the CheckOutScreen
+      return MaterialPageRoute(
+        builder: (context) {
+          final RoomModel roomModel = (settings.arguments as RoomModel);
+          return CheckoutScreen(
+            roomModel: roomModel,
+          );
+        },
+      );
+
+    case HotelBookingScreen.routeName:
+      // * Add destination for the HotelBookingScreen
+      return MaterialPageRoute(
+        builder: (context) {
+          final String? nameDestination = (settings.arguments as String?);
+          return HotelBookingScreen(
+            nameDestination: nameDestination,
+          );
+        },
+      );
     default:
       break;
   }

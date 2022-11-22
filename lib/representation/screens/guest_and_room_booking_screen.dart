@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:travel_app/core/helpers/asset_helper.dart';
 import 'package:travel_app/representation/widgets/item_add_guest_and_room_widget.dart';
-
+import '../../core/constants/color_constants.dart';
 import '../../core/constants/dimension_contants.dart';
 import '../widgets/app_bar_container.dart';
 import '../widgets/button_widget.dart';
@@ -24,12 +24,12 @@ class _GuestAndRoomBookingWidgetState extends State<GuestAndRoomBookingWidget> {
       titleString: 'Add guest and room',
       child: Column(
         children: [
-          SizedBox(
+          const SizedBox(
             height: kMediumPadding * 2,
           ),
-          ItemAddGuestAndRoom(
+          const ItemAddGuestAndRoom(
               title: 'Guest', icon: AssetHelper.iconGuest, initData: 2),
-          ItemAddGuestAndRoom(
+          const ItemAddGuestAndRoom(
               title: 'Guest', icon: AssetHelper.iconBed, initData: 1),
           ButtonWidget(
             title: 'Select',
@@ -41,10 +41,12 @@ class _GuestAndRoomBookingWidgetState extends State<GuestAndRoomBookingWidget> {
             height: kDefaultPadding,
           ),
           ButtonWidget(
-              title: 'Cancel',
-              onTap: () {
-                Navigator.of(context).pop();
-              })
+            title: 'Cancel',
+            opacity: ColorPalette.primaryColor.withOpacity(0.1),
+            onTap: () {
+              Navigator.of(context).pop();
+            },
+          )
         ],
       ),
     );

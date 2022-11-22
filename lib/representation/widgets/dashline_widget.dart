@@ -9,6 +9,8 @@ class DashLineWidget extends StatelessWidget {
 
   final double height;
   final Color color;
+
+  // * Render dash lines
   @override
   Widget build(BuildContext context) {
     return LayoutBuilder(
